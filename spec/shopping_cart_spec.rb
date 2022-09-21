@@ -40,7 +40,7 @@ RSpec.describe ShoppingCart do
     cart.add_product(product4)
 
     expect(cart.is_full?).to be true
-
+    expect(cart.products_by_category(:paper)).to eq([product1, product3])
   end
 
 end

@@ -30,5 +30,10 @@ class ShoppingCart
     total_number_products > @capacity
   end
 
+  def products_by_category(category)
+    @products.select do |product|
+      product.category == category
+    end
+  end
 
 end
