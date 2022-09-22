@@ -21,9 +21,7 @@ class ShoppingCart
   end
 
   def total_number_products
-    @products.sum do |product|
-      product.quantity
-    end
+    @products.sum(&:quantity)
   end
 
   def is_full?
@@ -41,9 +39,7 @@ class ShoppingCart
   end
 
   def sort_products_by_quantity
-  sorted = @products.sort_by do |product|
-      product.quantity
-    end
+    sorted = @products.sort_by(&:quantity)
     sorted.reverse
   end
 
