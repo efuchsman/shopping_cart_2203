@@ -54,6 +54,11 @@ RSpec.describe ShoppingCart do
       cart.add_product(product3)
 
       expect(cart.percentage_occupied).to eq(43.33)
+
+      product4 = Product.new(:produce, 'apples', 0.99, '20')
+      cart.add_product(product4)
+
+      expect(cart.sort_products_by_quantity).to eq([product4, product1, product2, product3])
   end
 
 end
